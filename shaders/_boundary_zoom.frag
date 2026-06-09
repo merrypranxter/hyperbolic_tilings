@@ -148,7 +148,8 @@ void main() {
     base = mix(base, vec3(0.8, 0.9, 1.0), vq*0.9);
 
     // The approach direction: bright glow ahead, dim behind
-    float zoom_glow = exp(-dist2(uv, vec2(cos(zoom_angle),sin(zoom_angle))*0.9)*80.0)*0.8;
+    vec2 zoom_dir = vec2(cos(zoom_angle),sin(zoom_angle))*0.9;
+    float zoom_glow = exp(-dot(uv - zoom_dir, uv - zoom_dir)*80.0)*0.8;
     base += vec3(0.1, 0.2, 0.8)*zoom_glow;
 
     // Boundary ring: always visible even as we zoom — infinitely far

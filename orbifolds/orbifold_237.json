@@ -1,7 +1,7 @@
 {
   "name": "Orbifold for (2,3,7) triangle group",
   "orbifoldNotation": "*237",
-  "eulerCharistic": {
+  "eulerCharacteristic": {
     "formula": "χ(orbifold) = 2 - 2g - b - Σ(1 - 1/n_i)",
     "forStarGroup": "χ(*237) = 2 - 0 - 1 - (1-1/2) - (1-1/3) - (1-1/7)",
     "calculation": "2 - 1 - 1/2 - 2/3 - 6/7 = 2 - 1 - 21/42 - 28/42 - 36/42 = 1 - 85/42 = -1/42",

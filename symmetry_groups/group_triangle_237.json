@@ -67,7 +67,7 @@
   },
 
   "kleinQuartic": {
-    "description": "The Klein quartic x³y + y³z + z⁴ = 0 has 168 automorphisms, the maximum for genus 3",
+    "description": "The Klein quartic x³y + y³z + z³x = 0 has 168 automorphisms, the maximum for genus 3",
     "tilingRelation": "{7,3} tiling of the Klein quartic has 24 heptagons, 56 vertices, 84 edges",
     "symmetryGroup": "PSL(2,7), order 168 = 84·(2·1-2) for χ = -2"
   },

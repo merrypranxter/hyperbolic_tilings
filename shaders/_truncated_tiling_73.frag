@@ -75,7 +75,7 @@ int classifyRegion(vec2 fd, FundTri tri) {
     float frac_Q = d_Q / total;   // fraction of barycentric weight at Q
 
     if (frac_Q < 0.38) return 2;  // inside the cut triangle
-    return (parity = 1, 1);       // inside the 14-gon region
+    return 1;                      // inside the 14-gon region
 }
 
 // dummy for compilation — actual classification inline below

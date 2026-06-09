@@ -49,7 +49,7 @@ The 17 wallpaper groups in orbifold notation:
 |----------|------|---|
 | `○` | p1 | 0 |
 | `××` | pg | 0 |
-| `*×` | pm | 0 |
+| `*×` | cm | 0 |
 | `**` | pm | 0 |
 | `2222` | p2 | 0 |
 | `22×` | pgg | 0 |
