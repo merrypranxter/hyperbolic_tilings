@@ -1,0 +1,49 @@
+{
+  "name": "Quasifuchsian deformation of (2,3,7) group",
+  "type": "quasifuchsian group",
+  "description": "Continuous deformation of the Fuchsian {7,3} group toward a Kleinian group",
+
+  "deformationSpace": {
+    "name": "Teichmüller space T(S)",
+    "basePoint": "Fuchsian {7,3} group (tiling of Poincaré disk)",
+    "deformationParameter": "Beltrami differential μ on S = H²/Γ",
+    "constraint": "||μ||∞ < 1 for quasi-conformality"
+  },
+
+  "bending": {
+    "description": "Bending deformation: move the surface in ℍ³ (hyperbolic 3-space)",
+    "bendingMeasure": "A measured lamination on the convex core boundary",
+    "effect": {
+      "fuchsian": "t=0: limit set is the circle S¹",
+      "quasifuchsian": "0<t<1: limit set is a fractal Jordan curve (quasicircle)",
+      "kleinian": "t=1 (boundary): limit set becomes non-Jordan, group becomes Kleinian"
+    }
+  },
+
+  "animationParameters": {
+    "bendAmount": { "min": 0.0, "max": 0.85, "description": "Deformation magnitude" },
+    "bendFrequency": { "min": 3, "max": 11, "description": "Number of bending directions" },
+    "period": 60.0,
+    "note": "Shader animates along a path in Teichmüller space"
+  },
+
+  "limitSetEvolution": {
+    "t0": "Perfect circle (unit circle boundary)",
+    "t05": "Mildly deformed quasicircle (Jordan curve, fractal dimension > 1)",
+    "t09": "Heavily deformed quasicircle approaching parabolic limit",
+    "t1": "Singular (quasifuchsian group becomes b-group)"
+  },
+
+  "weilPeterssonMetric": {
+    "description": "The Weil-Petersson metric on Teichmüller space measures the deformation",
+    "formula": "WP inner product: (μ, ν) = ∫_S μ·ν̄ · λ² dA",
+    "geodesic": "The bending deformation follows a Weil-Petersson geodesic"
+  },
+
+  "shader": "_bending_animation.frag",
+  "visualAppearance": {
+    "fuchsian": "Clean tiling, crisp edges, perfect circular boundary",
+    "quasifuchsian": "Distorted tiling, wavy edges, fractal boundary",
+    "colorTransition": "Blue (Fuchsian) → Amber (Quasifuchsian) → Orange-Red (Kleinian limit)"
+  }
+}

@@ -1,0 +1,37 @@
+{
+  "group": "(2,4,5)",
+  "coxeterSymbol": "[2,4,5]",
+  "orbifoldNotation": "*245",
+  "description": "Triangle group for {5,4} and {4,5} tilings — Escher's Circle Limit IV group",
+
+  "generators": {
+    "r1": { "description": "Reflection across arc PQ (tile boundary)", "order": 2 },
+    "r2": { "description": "Reflection across x-axis (OP leg)", "order": 2 },
+    "r3": { "description": "Reflection across y-axis (OQ leg)", "order": 2 }
+  },
+
+  "relations": [
+    "r1² = r2² = r3² = 1",
+    "(r1·r2)⁴ = 1  [order 4 = q]",
+    "(r1·r3)⁵ = 1  [order 5 = p]",
+    "(r2·r3)² = 1  [right angle at origin]"
+  ],
+
+  "fundamentalDomain": {
+    "vertices": [
+      { "name": "O", "angle": "π/2", "euclideanPos": "(0, 0)" },
+      { "name": "P", "angle": "π/5", "euclideanPos": "(0.3178, 0)" },
+      { "name": "Q", "angle": "π/4", "euclideanPos": "(0, 0.2685)" }
+    ],
+    "area": "π/40"
+  },
+
+  "order": "infinite",
+  "tilings": ["{5,4}", "{4,5}"],
+
+  "escherRelevance": {
+    "description": "This group governs the symmetry of Escher's Circle Limit IV",
+    "colorSymmetry": "The 4-fold rotation at Q determines the 4-color scheme for angel/demon figures",
+    "pattern": "Angels and Demons alternate with 4-fold vertex symmetry"
+  }
+}

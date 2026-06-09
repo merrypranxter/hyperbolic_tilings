@@ -1,0 +1,38 @@
+{
+  "group": "(2,4,6)",
+  "coxeterSymbol": "[2,4,6]",
+  "orbifoldNotation": "*246",
+  "description": "Triangle group for {6,4} and {4,6} tilings — hyperbolic hexagonal/square group",
+
+  "generators": {
+    "r1": { "description": "Reflection across arc PQ", "order": 2 },
+    "r2": { "description": "Reflection across x-axis", "order": 2 },
+    "r3": { "description": "Reflection across y-axis", "order": 2 }
+  },
+
+  "relations": [
+    "r1² = r2² = r3² = 1",
+    "(r1·r2)⁴ = 1  [order 4 = q]",
+    "(r1·r3)⁶ = 1  [order 6 = p]",
+    "(r2·r3)² = 1  [right angle]"
+  ],
+
+  "fundamentalDomain": {
+    "vertices": [
+      { "name": "O", "angle": "π/2", "euclideanPos": "(0, 0)" },
+      { "name": "P", "angle": "π/6", "euclideanPos": "(√2-1, 0) ≈ (0.4142, 0)" },
+      { "name": "Q", "angle": "π/4", "euclideanPos": "(0, 0.3028)" }
+    ],
+    "area": "π/24",
+    "noteExact": "rP = √2 - 1 exactly (from sinh(OP) = 1, tanh(OP/2) = √2-1)"
+  },
+
+  "order": "infinite",
+  "tilings": ["{6,4}", "{4,6}"],
+
+  "specialProperties": {
+    "exactArithmetic": "D = 1/4 gives exact values for all fundamental triangle parameters",
+    "hexagonalConnection": "Degeneration: as curvature → 0, approaches the Euclidean (2,3,6) group",
+    "quasiregular": "The quasiregular {4,6;3} tiling uses this group"
+  }
+}

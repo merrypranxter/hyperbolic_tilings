@@ -1,0 +1,60 @@
+{
+  "$schema": "https://hyperbolic-tilings.dev/schemas/tiling.json",
+  "schlaefli": "{6,4}",
+  "p": 6,
+  "q": 4,
+  "description": "Hexagons meeting four at each vertex — hyperbolic analogue of the checkerboard",
+  "triangleGroup": "(2,4,6)",
+
+  "hyperbolicity": {
+    "condition": "1/p + 1/q < 1/2",
+    "check": "1/6 + 1/4 = 5/12 ≈ 0.417 < 0.5",
+    "verified": true
+  },
+
+  "fundamentalTriangle": {
+    "angles": { "atOrigin": "π/2", "atPVertex": "π/6", "atQVertex": "π/4" },
+    "discriminant": {
+      "formula": "D = 1 - sin²(π/6) - sin²(π/4) = 1 - 1/4 - 1/2 = 1/4",
+      "value": 0.25,
+      "noteExact": "D = 1/4 exactly — {6,4} has an especially clean fundamental triangle"
+    },
+    "legLengths": {
+      "OP_sinh": 1.0,
+      "OQ_sinh": 0.707107,
+      "OP_tanh_half": 0.414214,
+      "OQ_tanh_half": 0.302776,
+      "noteExact": "sinh(OP) = 1 exactly; rP = √2 - 1"
+    },
+    "arcGeodesic": {
+      "centerX": 1.707107,
+      "centerY": 2.207107,
+      "radius": 2.570563
+    }
+  },
+
+  "geometry": {
+    "areaPerHexagon": "π",
+    "areaPerFundamentalTriangle": "π/24",
+    "trianglesPerHexagon": 12,
+    "vertexAngles": "π/2 (four hexagons → 4·(π/2) = 2π exactly)",
+    "gaussBonnet": "(6-2)π - 6·(2π/4) = 4π - 3π = π"
+  },
+
+  "combinatorics": {
+    "vertexValence": 4,
+    "edgesPerFace": 6,
+    "eulerCharacteristic": "χ = V - E + F (infinite, non-compact)"
+  },
+
+  "euclideanAnalogue": {
+    "note": "The Euclidean {6,3} tiling has three hexagons per vertex. {6,4} is the hyperbolic analogue.",
+    "transition": "As curvature → 0, the {6,4} tiling would require increasing the space to Euclidean for {6,3}."
+  },
+
+  "dual": "{4,6}",
+  "relatives": ["{6,3}", "{6,4}", "{6,5}", "{6,6}"],
+
+  "shader": "_square_hyperbolic_64.frag",
+  "colorScheme": "Six-hue hexagonal color symmetry, blue-purple palette"
+}

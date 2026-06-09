@@ -1,0 +1,48 @@
+{
+  "$schema": "https://hyperbolic-tilings.dev/schemas/tiling.json",
+  "schlaefli": "{3,7}",
+  "p": 3,
+  "q": 7,
+  "description": "Triangles meeting seven at each vertex — dual of {7,3}",
+  "triangleGroup": "(2,7,3)",
+
+  "hyperbolicity": {
+    "condition": "1/p + 1/q < 1/2",
+    "check": "1/3 + 1/7 = 10/21 ≈ 0.476 < 0.5",
+    "verified": true
+  },
+
+  "fundamentalTriangle": {
+    "angles": { "atOrigin": "π/2", "atPVertex": "π/3", "atQVertex": "π/7" },
+    "note": "Same triangle as {7,3} with p and q vertex labels swapped",
+    "discriminant": {
+      "formula": "D = 1 - sin²(π/3) - sin²(π/7)",
+      "value": 0.061748
+    },
+    "legLengths": {
+      "OP_sinh": 0.286641,
+      "OQ_sinh": 0.572716,
+      "OP_tanh_half": 0.141032,
+      "OQ_tanh_half": 0.266116,
+      "noteSwap": "Compared to {7,3}: OP and OQ are swapped"
+    }
+  },
+
+  "geometry": {
+    "areaPerTriangle": "π/7",
+    "areaPerFundamentalTriangle": "π/42",
+    "trianglesPerTriangle": 6,
+    "vertexAngles": "2π/7 (at each vertex, seven triangles meet, angle = 2π/7 each)",
+    "gaussBonnet": "(3-2)π - 3·(2π/7) = π - 6π/7 = π/7"
+  },
+
+  "dualRelation": {
+    "dual": "{7,3}",
+    "dualDescription": "The {3,7} and {7,3} tilings are combinatorial duals: vertices of {3,7} are face-centers of {7,3}",
+    "sharedTriangleGroup": "Both use the (2,3,7) triangle group",
+    "dualConstruction": "Place a vertex at each heptagon center of {7,3}, connect adjacent centers to get {3,7}"
+  },
+
+  "shader": "_dual_tiling_37.frag",
+  "colorScheme": "Seven-arm radial color gradient, dark background with warm vertices"
+}

@@ -1,0 +1,83 @@
+{
+  "group": "(2,3,7)",
+  "coxeterSymbol": "[2,3,7]",
+  "orbifoldNotation": "*237",
+  "schlaefliType": "triangle group",
+  "description": "The most famous hyperbolic triangle group — generates {7,3} and {3,7} tilings",
+
+  "generators": {
+    "r1": {
+      "description": "Reflection across the geodesic opposite the π/2 vertex (the arc PQ)",
+      "type": "inversive reflection",
+      "order": 2,
+      "geometricRole": "crosses a {7,3} edge (tile boundary)"
+    },
+    "r2": {
+      "description": "Reflection across the geodesic opposite the π/3 vertex (the x-axis leg OP)",
+      "type": "Euclidean reflection (x-axis)",
+      "order": 2,
+      "geometricRole": "interior symmetry, within a fundamental domain's tile"
+    },
+    "r3": {
+      "description": "Reflection across the geodesic opposite the π/7 vertex (the y-axis leg OQ)",
+      "type": "Euclidean reflection (y-axis)",
+      "order": 2,
+      "geometricRole": "interior symmetry, within a fundamental domain's tile"
+    }
+  },
+
+  "relations": [
+    "r1² = 1",
+    "r2² = 1",
+    "r3² = 1",
+    "(r1·r2)³ = 1  [product has order 3 = q]",
+    "(r1·r3)⁷ = 1  [product has order 7 = p]",
+    "(r2·r3)² = 1  [product has order 2 = right angle]"
+  ],
+
+  "rotations": {
+    "S = r2·r1": {
+      "description": "Elliptic rotation of order 3 about the q-vertex (π/3 angle vertex)",
+      "order": 3,
+      "fixedPoint": "The q-vertex (Euclidean position (0, rQ))"
+    },
+    "T = r3·r1": {
+      "description": "Elliptic rotation of order 7 about the p-vertex (π/7 angle vertex)",
+      "order": 7,
+      "fixedPoint": "The p-vertex (Euclidean position (rP, 0))"
+    }
+  },
+
+  "fundamentalDomain": {
+    "vertices": [
+      { "name": "O", "angle": "π/2", "euclideanPos": "(0, 0)" },
+      { "name": "P", "angle": "π/7", "euclideanPos": "(0.2661, 0)" },
+      { "name": "Q", "angle": "π/3", "euclideanPos": "(0, 0.1410)" }
+    ],
+    "area": "π/42",
+    "totalSymmetryGroup": "4·7·3 = 84 fundamental domains per 2π"
+  },
+
+  "order": "infinite (non-compact, hyperbolic)",
+
+  "signature": {
+    "eulerCharacteristic": "χ(2,3,7) = -1/(2·1/42) = -21",
+    "note": "This is related to the Hurwitz group: max 84(g-1) automorphisms for genus g surface",
+    "hurwitzConnection": "The quotient of the (2,3,7) group by a torsion-free normal subgroup of index 168 gives the Klein quartic of genus 3"
+  },
+
+  "kleinQuartic": {
+    "description": "The Klein quartic x³y + y³z + z⁴ = 0 has 168 automorphisms, the maximum for genus 3",
+    "tilingRelation": "{7,3} tiling of the Klein quartic has 24 heptagons, 56 vertices, 84 edges",
+    "symmetryGroup": "PSL(2,7), order 168 = 84·(2·1-2) for χ = -2"
+  },
+
+  "tilings": ["{7,3}", "{3,7}"],
+  "dualGroup": "(2,7,3)",
+
+  "cayleyGraph": {
+    "vertices": "Group elements (fundamental domain images)",
+    "edges": "Generators r1, r2, r3",
+    "structure": "Infinite 3-valent tree (Cayley graph of the free product ℤ₂*ℤ₂*ℤ₂ quotiented by the triangle relations)"
+  }
+}

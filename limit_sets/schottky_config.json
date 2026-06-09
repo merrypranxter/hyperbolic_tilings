@@ -1,0 +1,57 @@
+{
+  "name": "Schottky group — two generator example",
+  "type": "Kleinian group",
+  "subtype": "Schottky group",
+  "description": "A Schottky group with two generators, producing a Cantor-set limit set",
+
+  "construction": {
+    "overview": "Choose two pairs of disjoint circles (C1,C1') and (C2,C2') on the boundary. Define generators g1,g2 mapping the interior of C1 to the exterior of C1', etc.",
+    "circles": [
+      { "name": "C1", "center": [0.0, 0.55], "radius": 0.25, "role": "source circle for g1" },
+      { "name": "C1prime", "center": [0.0, -0.55], "radius": 0.25, "role": "target circle for g1" },
+      { "name": "C2", "center": [0.55, 0.0], "radius": 0.20, "role": "source circle for g2" },
+      { "name": "C2prime", "center": [-0.55, 0.0], "radius": 0.20, "role": "target circle for g2" }
+    ]
+  },
+
+  "generators": {
+    "g1": {
+      "type": "loxodromic Möbius transformation",
+      "description": "Maps exterior of C1 to interior of C1' (maps C1 onto C1')",
+      "fixedPoints": ["~(0.0, 0.75)", "~(0.0, -0.75)"],
+      "multiplier": { "magnitude": 0.5, "argument": 0.4 }
+    },
+    "g2": {
+      "type": "loxodromic Möbius transformation",
+      "description": "Maps exterior of C2 to interior of C2'",
+      "fixedPoints": ["~(0.72, 0.0)", "~(-0.72, 0.0)"],
+      "multiplier": { "magnitude": 0.55, "argument": -0.5 }
+    }
+  },
+
+  "limitSet": {
+    "description": "The Cantor set intersection of all iterated preimage circles",
+    "topology": "Cantor set (perfect nowhere-dense closed set, uncountable, zero measure)",
+    "fractalDimension": "Hausdorff dimension between 0 and 1 (depends on group parameters)",
+    "construction": "Intersection of C(n) = g1^±1(C(n-1)) ∪ g2^±1(C(n-1)) for all n",
+    "rendering": "Count IFS iterations to convergence for each pixel; depth gives color"
+  },
+
+  "discontinuityRegion": {
+    "description": "The complement of the limit set where the group acts discontinuously",
+    "topology": "Open subset of sphere (or disk)",
+    "structure": "Infinitely many circular regions bounded by images of the Schottky circles"
+  },
+
+  "quotientsurface": {
+    "genus": 2,
+    "description": "The quotient manifold ℍ³/Γ is a genus-2 handlebody (Schottky 3-manifold)",
+    "boundary": "The quotient of the limit set gives the boundary Riemann surface"
+  },
+
+  "shader": "_limit_set_glow.frag",
+  "animationParameters": {
+    "phase": "Animates multiplier arguments over time",
+    "range": "Loxodromic → parabolic → back (slow oscillation)"
+  }
+}

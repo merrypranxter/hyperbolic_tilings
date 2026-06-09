@@ -1,0 +1,46 @@
+{
+  "group": "(2,3,∞)",
+  "coxeterSymbol": "[2,3,∞]",
+  "orbifoldNotation": "*23∞",
+  "description": "Triangle group for the apeirogonal {∞,3} tiling — one vertex is ideal",
+  "type": "degenerate triangle group (ideal vertex)",
+
+  "generators": {
+    "r1": { "description": "Reflection across arc PQ (goes to ideal point)", "order": 2 },
+    "r2": { "description": "Reflection across x-axis", "order": 2 },
+    "r3": { "description": "Reflection across y-axis (parabolic axis)", "order": 2 }
+  },
+
+  "relations": [
+    "r1² = r2² = r3² = 1",
+    "(r1·r2)³ = 1  [order 3 = q]",
+    "(r1·r3)^∞ = parabolic  [p-vertex is ideal, infinite order rotation]",
+    "(r2·r3)² = 1  [right angle]"
+  ],
+
+  "idealVertex": {
+    "description": "The p-vertex is an ideal point on the boundary circle",
+    "effect": "The 'rotation' at the ideal vertex is actually a parabolic Möbius transformation",
+    "parabolicTransformation": "Fixes the ideal point, acts as a horocyclic translation",
+    "horocycles": "The 'circles' of the ideal vertex are horocycles (internally tangent to boundary)"
+  },
+
+  "fundamentalDomain": {
+    "vertices": [
+      { "name": "O", "angle": "π/2", "euclideanPos": "(0, 0)" },
+      { "name": "P", "angle": "0 (ideal)", "euclideanPos": "(1, 0) limit" },
+      { "name": "Q", "angle": "π/3", "euclideanPos": "(0, 0.3028)" }
+    ],
+    "area": "π/6",
+    "note": "Infinite area because P is an ideal vertex"
+  },
+
+  "order": "infinite",
+  "tilings": ["{∞,3}", "{3,∞}"],
+
+  "parabolics": {
+    "description": "Contains parabolic elements (fixing one ideal point)",
+    "conjugacyClass": "All parabolics fixing the same ideal point are conjugate",
+    "funnelEnd": "The 'funnel' end of the hyperbolic surface leading to the cusp"
+  }
+}
