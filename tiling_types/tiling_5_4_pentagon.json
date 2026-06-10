@@ -1,0 +1,60 @@
+{
+  "$schema": "https://hyperbolic-tilings.dev/schemas/tiling.json",
+  "schlaefli": "{5,4}",
+  "p": 5,
+  "q": 4,
+  "description": "Pentagons meeting four at each vertex — basis for Escher's Circle Limit IV",
+  "triangleGroup": "(2,4,5)",
+
+  "hyperbolicity": {
+    "condition": "1/p + 1/q < 1/2",
+    "check": "1/5 + 1/4 = 9/20 = 0.45 < 0.5",
+    "verified": true
+  },
+
+  "fundamentalTriangle": {
+    "angles": { "atOrigin": "π/2", "atPVertex": "π/5", "atQVertex": "π/4" },
+    "discriminant": {
+      "formula": "D = 1 - sin²(π/5) - sin²(π/4)",
+      "value": 0.154508
+    },
+    "legLengths": {
+      "OP_sinh": 0.668648,
+      "OQ_sinh": 0.555917,
+      "OP_tanh_half": 0.317838,
+      "OQ_tanh_half": 0.268517
+    },
+    "arcGeodesic": {
+      "centerX": 1.650975,
+      "centerY": 1.922882,
+      "radius": 2.219327
+    }
+  },
+
+  "geometry": {
+    "areaPerPentagon": "π/2",
+    "areaPerFundamentalTriangle": "π/40",
+    "trianglesPerPentagon": 8,
+    "vertexAngles": "π/2 (at each vertex, four pentagons meet, angles = 2π/4 = π/2)",
+    "gaussBonnet": "(5-2)π - 5·(2π/4) = 3π - 5π/2 = π/2"
+  },
+
+  "combinatorics": {
+    "vertexValence": 4,
+    "edgesPerFace": 5,
+    "eulerCharacteristic": "χ = V - E + F (infinite, non-compact)"
+  },
+
+  "escherConnection": {
+    "artwork": "Circle Limit IV (Angels and Demons), 1960",
+    "technique": "Each angel/demon figure corresponds to a fundamental domain",
+    "colorSymmetry": "4-coloring following the (2,4,5) orbifold symmetry",
+    "reference": "Coxeter, H.S.M. (1979). The non-Euclidean symmetry of Escher's picture 'Circle Limit III'."
+  },
+
+  "dual": "{4,5}",
+  "relatives": ["{5,3}", "{5,4}", "{5,5}", "{5,6}"],
+
+  "shader": "_pentagonal_lattice_54.frag",
+  "colorScheme": "Escher-inspired four-color ivory/gold/navy/forest"
+}

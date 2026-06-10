@@ -1,0 +1,67 @@
+{
+  "name": "Orbifold for (2,3,7) triangle group",
+  "orbifoldNotation": "*237",
+  "eulerCharacteristic": {
+    "formula": "χ(orbifold) = 2 - 2g - b - Σ(1 - 1/n_i)",
+    "forStarGroup": "χ(*237) = 2 - 0 - 1 - (1-1/2) - (1-1/3) - (1-1/7)",
+    "calculation": "2 - 1 - 1/2 - 2/3 - 6/7 = 2 - 1 - 21/42 - 28/42 - 36/42 = 1 - 85/42 = -1/42",
+    "value": -0.023810,
+    "note": "Negative Euler characteristic confirms hyperbolicity"
+  },
+
+  "conePoints": [
+    {
+      "name": "P (π/7 vertex)",
+      "order": 7,
+      "angle": "2π/7",
+      "description": "7-fold cone point — center of each heptagon"
+    },
+    {
+      "name": "Q (π/3 vertex)",
+      "order": 3,
+      "angle": "2π/3",
+      "description": "3-fold cone point — vertex where three heptagons meet"
+    },
+    {
+      "name": "O (π/2 vertex)",
+      "order": 2,
+      "angle": "π",
+      "description": "2-fold cone point — midpoint of each {7,3} edge"
+    }
+  ],
+
+  "mirrors": [
+    "The three geodesics bounding the fundamental triangle are the reflection mirrors",
+    "Together they generate the full (2,3,7) group"
+  ],
+
+  "orbifoldCoverings": {
+    "universalCover": "ℍ² (hyperbolic plane)",
+    "orbifoldFundamentalGroup": "(2,3,7) triangle group",
+    "torsionFreeSubgroup": {
+      "index": 84,
+      "quotient": "Closed hyperbolic surface of genus 3 (the Klein quartic)"
+    }
+  },
+
+  "orbifoldStructure": {
+    "genus": 0,
+    "boundaries": 1,
+    "description": "The orbifold is topologically a disk with three cone points of orders 2, 3, 7"
+  },
+
+  "relatedOrbifolds": [
+    { "notation": "*23n", "description": "Triangle group orbifolds approaching the cusp as n→∞" },
+    { "notation": "*245", "description": "Orbifold for Escher's Circle Limit IV" },
+    { "notation": "*246", "description": "Orbifold for {6,4} hexagonal tiling" },
+    { "notation": "*333", "description": "Equilateral triangle orbifold, Euclidean flat" },
+    { "notation": "*632", "description": "Euclidean orbifold: regular hexagonal tiling" }
+  ],
+
+  "wallpaperAnalogy": {
+    "description": "Orbifold notation unifies Euclidean wallpaper groups and hyperbolic triangle groups",
+    "euclideanOrbifolds": "17 wallpaper groups correspond to orbifolds with χ = 0",
+    "hyperbolicOrbifolds": "Infinitely many with χ < 0",
+    "reference": "Thurston, W.P. (1997). Three-Dimensional Geometry and Topology, Ch. 13"
+  }
+}

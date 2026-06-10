@@ -1,0 +1,55 @@
+{
+  "$schema": "https://hyperbolic-tilings.dev/schemas/tiling.json",
+  "schlaefli": "{∞,3}",
+  "p": "∞",
+  "q": 3,
+  "description": "Apeirogonal tiling: infinite-sided polygons (apeirogons) meeting three at each vertex",
+  "triangleGroup": "(2,3,∞)",
+  "type": "ideal tiling",
+
+  "hyperbolicity": {
+    "condition": "1/p + 1/q < 1/2",
+    "check": "1/∞ + 1/3 = 0 + 1/3 = 0.333 < 0.5",
+    "verified": true,
+    "noteIdeal": "The p-vertex is an ideal point (on the boundary circle) since p=∞"
+  },
+
+  "fundamentalTriangle": {
+    "angles": { "atOrigin": "π/2", "atPVertex": "0 (ideal point)", "atQVertex": "π/3" },
+    "discriminant": {
+      "formula": "D = 1 - sin²(π/∞) - sin²(π/3) = 1 - 0 - 3/4 = 1/4",
+      "value": 0.25,
+      "note": "sin(π/∞) = 0, so D = 1 - sin²(π/q)"
+    },
+    "legLengths": {
+      "OP_sinh": "∞ (p-vertex at boundary)",
+      "OQ_sinh": 0.707107,
+      "OP_tanh_half": "1.0 (limit, ideal point)",
+      "OQ_tanh_half": 0.302776
+    },
+    "shaderApproximation": {
+      "p_approx": 50,
+      "rP_approx": 0.9994,
+      "note": "Shader uses p=50 to approximate ideal vertex near boundary"
+    }
+  },
+
+  "geometry": {
+    "areaPerApeirogon": "∞ (infinite area per tile)",
+    "areaPerIdealTriangle": "π",
+    "trianglesPerApeirogon": "∞",
+    "vertexAngles": "2π/3 (three apeirogons meet at each finite vertex)",
+    "horocycles": "The 'edges' of the apeirogon are geodesics from ideal points; horocycles are the level-set circles",
+    "idealVertices": "The infinite 'corners' of the apeirogon lie on the boundary circle"
+  },
+
+  "horocycles": {
+    "definition": "A horocycle is a 'circle of infinite radius': it appears as a Euclidean circle internally tangent to the unit circle",
+    "inPoincareModel": "Euclidean circle tangent to unit circle from inside",
+    "inUpperHalfPlane": "Horizontal line (y = constant) or Euclidean circle tangent to real axis",
+    "role": "Horocycles are the equidistant curves from an ideal point; they tile the apeirogon strips"
+  },
+
+  "shader": "_apeirogonal_inf3.frag",
+  "colorScheme": "Deep ocean blues with horocycle banding, ideal-point glow"
+}

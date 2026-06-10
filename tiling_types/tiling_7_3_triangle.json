@@ -1,0 +1,53 @@
+{
+  "$schema": "https://hyperbolic-tilings.dev/schemas/tiling.json",
+  "schlaefli": "{7,3}",
+  "p": 7,
+  "q": 3,
+  "description": "Heptagons meeting three at each vertex — the most famous hyperbolic tiling",
+  "triangleGroup": "(2,3,7)",
+
+  "hyperbolicity": {
+    "condition": "1/p + 1/q < 1/2",
+    "check": "1/7 + 1/3 = 10/21 ≈ 0.476 < 0.5",
+    "verified": true
+  },
+
+  "fundamentalTriangle": {
+    "angles": { "atOrigin": "π/2", "atPVertex": "π/7", "atQVertex": "π/3" },
+    "discriminant": {
+      "formula": "D = 1 - sin²(π/p) - sin²(π/q)",
+      "value": 0.061748
+    },
+    "legLengths": {
+      "OP_sinh": 0.572716,
+      "OQ_sinh": 0.286641,
+      "OP_tanh_half": 0.266116,
+      "OQ_tanh_half": 0.141032
+    },
+    "arcGeodesic": {
+      "centerX": 2.012420,
+      "centerY": 3.618034,
+      "radius": 4.016052
+    }
+  },
+
+  "geometry": {
+    "areaPerHeptagon": "π/3",
+    "areaPerFundamentalTriangle": "π/42",
+    "trianglesPerHeptagon": 14,
+    "vertexAngles": "2π/3 (at each vertex, three heptagons meet)",
+    "gaussBonnet": "(7-2)π - 7·(2π/3) = 5π - 14π/3 = π/3"
+  },
+
+  "combinatorics": {
+    "vertexValence": 3,
+    "edgesPerFace": 7,
+    "eulerCharacteristic": "χ = V - E + F (infinite, non-compact)"
+  },
+
+  "dual": "{3,7}",
+  "relatives": ["{7,2}", "{7,3}", "{7,4}", "{7,7}"],
+
+  "shader": "_poincare_disc_73_exact.frag",
+  "colorScheme": "indigo-amber two-tone with golden edges"
+}
